@@ -18,8 +18,9 @@ public class ChangeColorT {
   @Before
   public void setUp() throws Exception {
     driver = new FirefoxDriver();
-    baseUrl = "http://172.20.208.142:4040/admin";
+    baseUrl = "http://172.20.208.142:4040/";
     driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+    driver.manage().window().maximize();
   }
 
   @Test
@@ -38,7 +39,7 @@ public class ChangeColorT {
     driver.findElement(By.cssSelector("option[value=\"red\"]")).click();
     driver.findElement(By.cssSelector("button.btn.btn-primary")).click();
     driver.findElement(By.linkText("Email Servers")).click();
-    driver.findElement(By.cssSelector("button.navbar-toggle")).click();
+    //driver.findElement(By.cssSelector("button.navbar-toggle")).click();
     driver.findElement(By.linkText("sign out")).click();
   }
 
